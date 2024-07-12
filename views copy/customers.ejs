@@ -1,0 +1,595 @@
+<!doctype html>
+    <html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title></title>
+        <style>
+            .logo {
+                margin-bottom: 15px;
+                position: absolute;
+                top: 10px; /* Adjusted top position to give space */
+                left: 50%;
+                transform: translateX(-50%);
+                width: 400px;
+                height: 50px;
+                border-radius: 15px;
+                z-index: 1;
+            }
+    
+            body {
+                background-color: #f8f9fa; /* Light background for contrast */
+                color: #333; /* Dark text for readability */
+            }
+    
+            h1 {
+                color: #333; /* Black */
+                font-size: 2.5rem;
+                margin-bottom: 30px;
+            }
+    
+            .card-header {
+                background-color: #333; /* Black */
+                color: #fff; /* White */
+                font-size: 1.25rem;
+                text-align: center;
+            }
+    
+            .card-body {
+                background-color: #fff; /* White */
+                margin-bottom: 20px;
+            }
+    
+            .form-control {
+                border-radius: 0.25rem;
+                box-shadow: none;
+                border: 1px solid #ced4da; /* Default Bootstrap border color */
+            }
+    
+            .btn-primary {
+                background-color: #dc3545; /* Red */
+                border: none;
+                border-radius: 0.25rem;
+                padding: 10px 20px;
+            }
+    
+            .btn-primary:hover {
+                background-color: #c82333; /* Darker Red */
+            }
+    
+            label {
+                font-weight: bold;
+                color: #333; /* Black */
+            }
+    
+            .mb-3 {
+                margin-bottom: 1.5rem !important;
+            }
+    
+            .container {
+                margin-top: 50px;
+            }
+    
+            .row {
+                margin-bottom: 15px;
+            }
+        </style>
+        </head>
+
+        <body>
+            <div class="container">
+                <h1 class="text-center mt-3 mb-3">
+                    <%= title %>
+                </h1>
+                <% if(action=='add' ) { %>
+                    <div class="card">
+                        <div class="card-header">Sample Form</div>
+                        <div class="card-body">
+                            <form method="POST" action="/customers/add_welcome">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label>Last Name</label>
+                                            <input type="text" name="lastName" id="lastName" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label>First Name</label>
+                                            <input type="text" name="firstName" id="firstName" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label>Middle Name</label>
+                                            <input type="text" name="middleInitial" id="middleInitial"
+                                                class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label>Alt Last Names</label>
+                                            <input type="text" name="otherLastNames" id="otherLastNames"
+                                                class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label>DOB</label>
+                                            <input type="date" name="dob" id="dob" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label>SSN</label>
+                                            <input type="number" name="ssn" id="ssn" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <input type="submit" name="submit_button" class="btn btn-primary" value="Add" />
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="card-body">
+                            <form method="POST" action="/customers/add_welcome">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label>Address</label>
+                                            <input type="text" name="address" id="address" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label>Apt Number</label>
+                                            <input type="text" name="aptNumber" id="aptNumber" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label>City</label>
+                                            <input type="text" name="city" id="city" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label>State</label>
+                                            <input type="text" name="state" id="state" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label>Zip Code</label>
+                                            <input type="number" name="zipCode" id="zipCode" class="form-control" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="mb-3">
+                                    <input type="submit" name="submit_button" class="btn btn-primary" value="Add" />
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="card-body">
+                            <form method="POST" action="/customers/add_welcome">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label>email</label>
+                                            <input type="text" name="email" id="email" class="form-control" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label>Phone Number</label>
+                                            <input type="text" name="phone" id="phone" class="form-control" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <input type="submit" name="submit_button" class="btn btn-primary" value="Add" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <% } else if(action=='edit' ) { %>
+                        <% if(type=='details' ) { %>
+                            <div class="card">
+                                <div class="card-header">Sample Form</div>
+                                <div class="card-body">
+                                    <form method="POST" action="/customers/edit/details/<%= sampleData.userDetailsId %>">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label>Last Name</label>
+                                                    <input type="text" name="lastName" id="lastName"
+                                                        class="form-control" value="<%= sampleData.lastName %>" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label>First Name</label>
+                                                    <input type="text" name="firstName" id="firstName"
+                                                        class="form-control" value="<%= sampleData.firstName %>" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label>Middle Name</label>
+                                                    <input type="text" name="middleInitial" id="middleInitial"
+                                                        class="form-control" value="<%= sampleData.middleInitial %>" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label>Alt Last Name</label>
+                                                    <input type="text" name="otherLastNames" id="otherLastNames"
+                                                        class="form-control" value="<%= sampleData.otherLastNames %>" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label>DOB</label>
+                                                    <input type="date" name="dob" id="dob" class="form-control"
+                                                        value="<%= sampleData.dob %>" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label>SSN</label>
+                                                    <input type="number" name="ssn" id="ssn" class="form-control"
+                                                        value="<%= sampleData.ssn %>" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <input type="submit" name="submit_button" class="btn btn-primary"
+                                                value="Edit" />
+                                        </div>
+                                    </form>
+                                    
+                                </div>
+                            </div>
+                            <% } else if(type=='address' ) { %>
+                                <div class="card">
+                                    <div class="card-header">Sample Form</div>
+                                    <div class="card-body">
+                                        <form method="POST" action="/customers/edit/address/<%= addressData.addressId %>">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label>Address</label>
+                                                        <input type="text" name="address" id="address"
+                                                            class="form-control" value="<%= addressData.address %>" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label>Apt Number</label>
+                                                        <input type="text" name="aptNumber" id="aptNumber"
+                                                            class="form-control" value="<%= addressData.aptNumber %>" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label>City</label>
+                                                        <input type="text" name="city" id="city"
+                                                            class="form-control" value="<%= addressData.city %>" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label>State</label>
+                                                        <select name="state" id="state" class="form-control"value="<%= addressData.state %>" / required>
+                                                            <option value="">Select a state</option>
+                                                
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+                <option value="AR">Arkansas</option>
+                <option value="CA">California</option>
+                <option value="CO">Colorado</option>
+                <option value="CT">Connecticut</option>
+                <option value="DE">Delaware</option>
+                <option value="DC">District Of Columbia</option>
+                <option value="FL">Florida</option>
+                <option value="GA">Georgia</option>
+                <option value="HI">Hawaii</option>
+                <option value="ID">Idaho</option>
+                <option value="IL">Illinois</option>
+                <option value="IN">Indiana</option>
+                <option value="IA">Iowa</option>
+                <option value="KS">Kansas</option>
+                <option value="KY">Kentucky</option>
+                <option value="LA">Louisiana</option>
+                <option value="ME">Maine</option>
+                <option value="MD">Maryland</option>
+                <option value="MA">Massachusetts</option>
+                <option value="MI">Michigan</option>
+                <option value="MN">Minnesota</option>
+                <option value="MS">Mississippi</option>
+                <option value="MO">Missouri</option>
+                <option value="MT">Montana</option>
+                <option value="NE">Nebraska</option>
+                <option value="NV">Nevada</option>
+                <option value="NH">New Hampshire</option>
+                <option value="NJ">New Jersey</option>
+                <option value="NM">New Mexico</option>
+                <option value="NY">New York</option>
+                <option value="NC">North Carolina</option>
+                <option value="ND">North Dakota</option>
+                <option value="OH">Ohio</option>
+                <option value="OK">Oklahoma</option>
+                <option value="OR">Oregon</option>
+                <option value="PA">Pennsylvania</option>
+                <option value="RI">Rhode Island</option>
+                <option value="SC">South Carolina</option>
+                <option value="SD">South Dakota</option>
+                <option value="TN">Tennessee</option>
+                <option value="TX">Texas</option>
+                <option value="UT">Utah</option>
+                <option value="VT">Vermont</option>
+                <option value="VA">Virginia</option>
+                <option value="WA">Washington</option>
+                <option value="WV">West Virginia</option>
+                <option value="WI">Wisconsin</option>
+                <option value="WY">Wyoming</option>
+            </select></br></br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="mb-3">
+                                                        <label>Zip Code</label>
+                                                        <input type="number" name="zipCode" id="zipCode" class="form-control"
+                                                            value="<%= addressData.zipCode %>" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <input type="submit" name="submit_button" class="btn btn-primary"
+                                                    value="Edit" />
+                                            </div>
+                                        </form>
+                                        <script>
+                                            document.getElementById('state').value="<%= addressData.state %>";
+                                            </script>
+                                    </div>
+                                </div>
+                                <% } else { %>
+                                    <div class="card">
+                                        <div class="card-header">Sample Form</div>
+                                        <div class="card-body">
+                                            <form method="POST"
+                                                action="/customers/edit/contact/<%= contactsData.contactId %>">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label>Email-id:</label>
+                                                            <input type="text" name="email" id="email"
+                                                                class="form-control"
+                                                                value="<%= contactsData.email %>" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="mb-3">
+                                                            <label>Contact Number</label>
+                                                            <input type="number" name="phone" id="phone"
+                                                                class="form-control"
+                                                                value="<%= contactsData.phone %>" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
+                                                    <input type="submit" name="submit_button" class="btn btn-primary"
+                                                        value="Edit" />
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <% } } else { %>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <div class="row">
+                                                    <div class="col">Account Details</div>
+                                                    <div class="col"></div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <th>Last Name</th>
+                                                            <th>First Name</th>
+                                                            <th>Middle Name</th>
+                                                            <th>Alternative Last Names</th>
+                                                            <th>DOB</th>
+                                                            <th>SSN</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                        <% if(sampleData.length> 0)
+                                                            {
+                                                            sampleData.forEach(function(data){
+                                                            %>
+                                                            <tr>
+                                                                <td>
+                                                                    <%= data.lastName %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= data.firstName %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= data.middleInitial %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= data.otherLastNames %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= data.dob %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= data.ssn %>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="/customers/edit/details/<%= data.userDetailsId %>"
+                                                                        class="btn btn-primary btn-sm">Edit</a>
+                                                                    <a href="/customers/delete/details/<%= data.userDetailsId %>"
+                                                                        class="btn btn-danger btn-sm">Delete</a>
+                                                                </td>
+
+                                                            </tr>
+                                                            <% }); } else { %>
+                                                                <tr>
+                                                                    <td colspan="7">No Data Found</td>
+                                                                </tr>
+                                                                <% } %>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+                                            <div class="card-header">
+                                                <div class="row">
+                                                    <div class="col">Address</div>
+                                                    <div class="col"></div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <th>address</th>
+                                                            <th>Apt Number</th>
+                                                            <th>City</th>
+                                                            <th>State</th>
+                                                            <th>Zip Code</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                        <% if(addressData.length> 0)
+                                                            {
+                                                            addressData.forEach(function(data){
+                                                            %>
+                                                            <tr>
+                                                                <td>
+                                                                    <%= data.address %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= data.aptNumber %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= data.city %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= data.state %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= data.zipCode %>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="/customers/edit/address/<%= data.addressId %>"
+                                                                        class="btn btn-primary btn-sm">Edit</a>
+                                                                    <a href="/customers/delete/address/<%= data.addressId %>"
+                                                                        class="btn btn-danger btn-sm">Delete</a>
+                                                                </td>
+
+                                                            </tr>
+                                                            <% }); } else { %>
+                                                                <tr>
+                                                                    <td colspan="6">No Data Found</td>
+                                                                </tr>
+                                                                <% } %>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+
+                                            <div class="card-header">
+                                                <div class="row">
+                                                    <div class="col">Contact Information</div>
+                                                    <div class="col"></div>
+                                                </div>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <th>email</th>
+                                                            <th>phone</th>
+                                                            <th>Action</th>
+                                                        </tr>
+                                                        <% if(contactsData.length> 0)
+                                                            {
+                                                            contactsData.forEach(function(data){
+                                                            %>
+                                                            <tr>
+                                                                <td>
+                                                                    <%= data.email %>
+                                                                </td>
+                                                                <td>
+                                                                    <%= data.phone %>
+                                                                </td>
+
+                                                                <td>
+                                                                    <a href="/customers/edit/contact/<%= data.contactId %>"
+                                                                        class="btn btn-primary btn-sm">Edit</a>
+                                                                    <a href="/customers/delete/contact/<%= data.contactId %>"
+                                                                        class="btn btn-danger btn-sm">Delete</a>
+                                                                </td>
+
+                                                            </tr>
+                                                            <% }); } else { %>
+                                                                <tr>
+                                                                    <td colspan="3">No Data Found</td>
+                                                                </tr>
+                                                                <% } %>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+
+
+
+                                        </div>
+
+                                        <% } %>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                crossorigin="anonymous"></script>
+        </body>
+
+    </html>

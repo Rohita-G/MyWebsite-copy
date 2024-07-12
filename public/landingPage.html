@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2C3E50;
+            padding: 20px;
+            color: white;
+            font-size: 6rem;
+        }
+        .header .logo img {
+            width: 100px;
+            height: 100px;
+            margin-right: 15px;
+        }
+        .header .whatsapp img {
+            width: 100px;
+            height: 100px;
+        }
+        .main {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            background-color: #ECF0F1;
+        }
+        .tile {
+            width: 1200px;
+            height: 800px;
+            background-color: #3498DB;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            border-radius: 10px;
+            cursor: pointer;
+            position: relative;
+        }
+        .tile a {
+            color: white;
+            text-decoration: none;
+            font-size: 6rem;
+        }
+        .status {
+            position: absolute;
+            bottom: 10px;
+            font-size: 5rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="" target="_blank">
+                <img src="" alt="Dhanutek Logo"> 
+            </a>
+        </div>
+        <div class="whatsapp">
+            <a href="https://wa.me/+18056598009" target="_blank">
+                <img src="whatsapp.png" alt="WhatsApp">
+            </a>
+        </div>
+    </div>
+    <div class="main">
+        <div class="tile"> 
+            <a href="https://example.com/tile1" target="_blank">Form I-9</a>  
+            <div class="status">Status: Submitted</div>
+        </div>
+        <div class="tile"> 
+            <a href="https://example.com/tile2" target="_blank">Form W-9</a> 
+            <div class="status">Status: In Review</div>
+        </div>
+        <div class="tile"> 
+            <a href="https://example.com/tile3" target="_blank">Form W-4</a>  
+            <div class="status">Status: Verified</div>
+        </div>
+        <div class="tile">
+            <a href="https://example.com/tile4" target="_blank">Time Sheets</a>  
+            <div class="status">Status: Submitted</div>
+        </div>
+        <div class="tile">
+            <a href="" target="_blank">Upload other Documents</a> 
+            <input type="file" id="fileUpload5" style="margin-top: 10px; font-size: 50px; align-items: center;">
+            <div class="status">Status: Submitted</div>
+        </div>
+        <div class="tile"> 
+            <a href="https://example.com/tile6" target="_blank">Tile 6</a>
+            <div class="status">Status: Verified</div>
+        </div>
+    </div>
+    <script> // for status functionality
+        
+    </script>
+</body>
+</html>
